@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RoboAI</string>
+    
+    <!-- Emotion labels -->
+    <string name="emotion_happy">😊 Happy</string>
+    <string name="emotion_surprised">😮 Surprised</string>
+    <string name="emotion_angry">😠 Angry</string>
+    <string name="emotion_neutral">😐 Neutral</string>
+    <string name="no_face_detected">No Face Detected</string>
+    
+    <!-- UI labels -->
+    <string name="confidence_format">Confidence: %1$d%%</string>
+    <string name="confidence_empty">Confidence: --</string>
+    <string name="head_pose_format">Yaw: %1$.0f° Pitch: %2$.0f°</string>
+    <string name="head_pose_empty">Head: --</string>
+</resources>
