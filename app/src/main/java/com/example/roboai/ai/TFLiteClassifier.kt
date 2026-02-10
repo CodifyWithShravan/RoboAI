@@ -218,16 +218,13 @@ class TFLiteClassifier(
     }
 
     private fun runMockInference(input: FloatArray): Pair<Int, Float> {
-        // Mock Classification Logic: Cycle through emotions every 2 seconds
-        val now = System.currentTimeMillis()
-        if (now - mockCycleTimer > 2000) {
-            mockCycleTimer = now
-            mockCycleIndex = (mockCycleIndex + 1) % 7
-        }
+        // Mock Classification Logic:
+        // We do NOT cycle emotions anymore, because it confuses the user.
+        // We return -1 (No Signal) so that the geometric EmotionAnalyzer 
+        // can drive the emotions (Smile, Surprise, Shake) without interference.
+        // The inference loop still runs to demonstrate latency/threading.
         
-        // Return confident result for the current cycle index
-        // 0:Angry, 1:Disgust(Angry), 2:Fear(Surprise), 3:Happy, 4:Sad, 5:Surprise, 6:Neutral
-        return mockCycleIndex to 0.95f
+        return -1 to 0f
     }
     
     fun stop() {
